@@ -36,16 +36,17 @@ export default class WordCard extends Component {
     render(){
         return(
             <div className= "App">
-            <h2>Round {this.state.attempt}</h2>
+            <br></br>
             <iframe 
             width="560" 
-            height="305" 
+            height="315" 
             src="https://www.youtube.com/embed/iByxlVvWrww?playlist=iByxlVvWrww&;autoplay=1&loop=1&rel=0&amp;showinfo=0"
             frameborder="0" 
             allow="autoplay; encrypted-media" 
             allowfullscreen
             >
             </iframe>
+            <h2>Round {this.state.attempt}</h2>
             <h3>What is the name of this band?</h3>
 
             { Array.from(this.state.chars).map( 
@@ -53,8 +54,8 @@ export default class WordCard extends Component {
                     activateHandler={this.activateHandler}/> 
                 )
             }
-            <h3>{this.state.complete? "CORRECT!! ANSWER IS BNK48" : ""}</h3>
-            <img alt='photo' style={{ width: 200 }} src={String(photo)} />
+            <h3>{this.state.complete? "CORRECT!! ANSWER IS BNK48" : "ANSWER IS ..."}</h3>
+            <img alt='photo' style={{ width: 250 }} src={String(photo)} />
             </div>
         )
     }

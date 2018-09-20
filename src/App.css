@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  background: url(./a.jpg) no-repeat center center fixed;
+  background-size: cover;
 }
 
 .App-logo {
@@ -25,10 +27,10 @@
 .card {
   display: inline-block;
   text-align: center;
-  width: 3em;
-  font-size: 2em;
+  width: 2.5em;
+  font-size: 2.5em;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  margin: 1em;
+  margin: 0.3em;
   user-select: none;
  }
 
