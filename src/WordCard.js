@@ -3,6 +3,8 @@ import CharacterCard from './CharacterCard';
 import _ from 'lodash';
 
 const photo = require('./b.gif');
+const picture = require('./c.gif');
+const images = require('./d.gif');
 
 const prepareStateFromWord = (give_word) =>{
     let word = give_word.toUpperCase()
@@ -55,7 +57,10 @@ export default class WordCard extends Component {
                 )
             }
             <h3>{this.state.complete? "CORRECT!! ANSWER IS BNK48" : "ANSWER IS ..."}</h3>
-            <img alt='photo' style={{ width: 250 }} src={String(photo)} />
+            <img alt='images' style={{ width: 250 }} src={String(images)} /> &nbsp;
+            <img alt='photo' style={{ width: 250 }} src={String(photo)} /> &nbsp;
+            <img alt='picture' style={{ width: 250 }} src={String(picture)} />
+
             </div>
         )
     }
