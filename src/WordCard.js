@@ -38,13 +38,13 @@ export default class WordCard extends Component {
             <div className= "App">
             <h1>Round {this.state.attempt}</h1>
             <img alt='photo' style={{ width: 500 }} src={String(photo)} />
-            <h3>FIGHT!!</h3>
+            <h3>WHO IS SHE?</h3>
             { Array.from(this.state.chars).map( 
                     (c,i)=> <CharacterCard value = {c} key = {i} attempt={this.state.attempt} 
                     activateHandler={this.activateHandler}/> 
                 )
             }
-            <h2>{this.state.complete? "CORRECT!!" : ""}</h2>
+            <h2>{this.state.complete? "CORRECT!! ANSWER IS MUSIC(BNK48)" : ""}</h2>
             </div>
         )
     }
