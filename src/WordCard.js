@@ -36,15 +36,25 @@ export default class WordCard extends Component {
     render(){
         return(
             <div className= "App">
-            <h1>Round {this.state.attempt}</h1>
-            <img alt='photo' style={{ width: 500 }} src={String(photo)} />
-            <h3>WHO IS SHE?</h3>
+            <h2>Round {this.state.attempt}</h2>
+            <iframe 
+            width="560" 
+            height="305" 
+            src="https://www.youtube.com/embed/iByxlVvWrww?playlist=iByxlVvWrww&;autoplay=1&loop=1&rel=0&amp;showinfo=0"
+            frameborder="0" 
+            allow="autoplay; encrypted-media" 
+            allowfullscreen
+            >
+            </iframe>
+            <h3>What is the name of this band?</h3>
+
             { Array.from(this.state.chars).map( 
                     (c,i)=> <CharacterCard value = {c} key = {i} attempt={this.state.attempt} 
                     activateHandler={this.activateHandler}/> 
                 )
             }
-            <h2>{this.state.complete? "CORRECT!! ANSWER IS MUSIC(BNK48)" : ""}</h2>
+            <h3>{this.state.complete? "CORRECT!! ANSWER IS BNK48" : ""}</h3>
+            <img alt='photo' style={{ width: 200 }} src={String(photo)} />
             </div>
         )
     }
