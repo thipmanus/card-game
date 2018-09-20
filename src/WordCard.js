@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import CharacterCard from './CharacterCard';
 import _ from 'lodash';
 
+const photo = require('./b.gif');
+
 const prepareStateFromWord = (give_word) =>{
     let word = give_word.toUpperCase()
     let chars = _.shuffle(Array.from(word))
@@ -35,13 +37,14 @@ export default class WordCard extends Component {
         return(
             <div className= "App">
             <h1>Round {this.state.attempt}</h1>
+            <img alt='photo' style={{ width: 500 }} src={String(photo)} />
             <h3>FIGHT!!</h3>
             { Array.from(this.state.chars).map( 
                     (c,i)=> <CharacterCard value = {c} key = {i} attempt={this.state.attempt} 
                     activateHandler={this.activateHandler}/> 
                 )
             }
-            <h2>{this.state.complete? "YOU WIN!!" : ""}</h2>
+            <h2>{this.state.complete? "CORRECT!!" : ""}</h2>
             </div>
         )
     }
