@@ -5,6 +5,8 @@ import _ from 'lodash';
 const photo = require('./b.gif');
 const picture = require('./c.gif');
 const images = require('./d.gif');
+const pic2 = require('./e.gif');
+const pic3 = require('./f.gif');
 
 const prepareStateFromWord = (give_word) =>{
     let word = give_word.toUpperCase()
@@ -52,21 +54,21 @@ export default class WordCard extends Component {
             //allowfullscreen
             >
             </iframe>
-            <h2>Round {this.state.attempt}</h2>
-            <h3>What is the name of this band? </h3>
-
+            <h2>Round {this.state.attempt} &nbsp; What is the name of this band? </h2>
+            <button type="button" onClick={ refreshPage }> <span>RESTART</span> </button><br></br>
+            <h3>
+            {this.state.complete? "CORRECT!! ANSWER IS BNK48" : "ANSWER IS ..."}
+            </h3> 
             { Array.from(this.state.chars).map( 
                     (c,i)=> <CharacterCard value = {c} key = {i} attempt={this.state.attempt} 
                     activateHandler={this.activateHandler}/> 
                 )
             }
-            
-            <h3>
-            <button type="button" onClick={ refreshPage }> <span>Reload</span> </button>    
-            &nbsp;&nbsp;{this.state.complete? "CORRECT!! ANSWER IS BNK48" : "ANSWER IS ..."}
-            </h3>
+            <br></br>
+            <img alt='pic2' style={{ width: 250 }} src={String(pic2)} /> &nbsp;
             <img alt='images' style={{ width: 250 }} src={String(images)} /> &nbsp;
             <img alt='photo' style={{ width: 250 }} src={String(photo)} /> &nbsp;
+            <img alt='pic3' style={{ width: 250 }} src={String(pic3)} /> &nbsp;
             <img alt='picture' style={{ width: 250 }} src={String(picture)} />
             
             </div> 
