@@ -1,11 +1,9 @@
 .App {
   text-align: center;
-  background: url(./a.jpg) no-repeat center center fixed; 
-  position: fixed; 
-  top: 0; 
-  left: 0; 
+  background: url(./a.jpg) no-repeat center center fixed;  
   min-width: 100%;
   min-height: 100%;
+  position: absolute;
 }
 
 .App-logo {
@@ -31,8 +29,8 @@
 .card {
   display: inline-block;
   text-align: center;
-  width: 2.5em;
-  font-size: 2.5em;
+  width: 2.2em;
+  font-size: 2.2em;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   margin: 0.3em;
   user-select: none;

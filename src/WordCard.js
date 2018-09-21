@@ -18,6 +18,10 @@ const prepareStateFromWord = (give_word) =>{
        } 
 }
 
+function refreshPage(){ 
+    window.location.reload();
+}
+
 export default class WordCard extends Component {
     constructor(props){
         super(props)
@@ -45,23 +49,28 @@ export default class WordCard extends Component {
             src="https://www.youtube.com/embed/iByxlVvWrww?playlist=iByxlVvWrww&;autoplay=1&loop=1&rel=0&amp;showinfo=0"
             frameborder="0" 
             allow="autoplay; encrypted-media" 
-            allowfullscreen
+            //allowfullscreen
             >
             </iframe>
             <h2>Round {this.state.attempt}</h2>
-            <h3>What is the name of this band?</h3>
+            <h3>What is the name of this band? </h3>
 
             { Array.from(this.state.chars).map( 
                     (c,i)=> <CharacterCard value = {c} key = {i} attempt={this.state.attempt} 
                     activateHandler={this.activateHandler}/> 
                 )
             }
-            <h3>{this.state.complete? "CORRECT!! ANSWER IS BNK48" : "ANSWER IS ..."}</h3>
+            
+            <h3>
+            <button type="button" onClick={ refreshPage }> <span>Reload</span> </button>    
+            &nbsp;&nbsp;{this.state.complete? "CORRECT!! ANSWER IS BNK48" : "ANSWER IS ..."}
+            </h3>
             <img alt='images' style={{ width: 250 }} src={String(images)} /> &nbsp;
             <img alt='photo' style={{ width: 250 }} src={String(photo)} /> &nbsp;
             <img alt='picture' style={{ width: 250 }} src={String(picture)} />
-
-            </div>
+            
+            </div> 
+        
         )
     }
 }
